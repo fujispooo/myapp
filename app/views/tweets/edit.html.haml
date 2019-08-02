@@ -1,0 +1,18 @@
+= render 'header'
+.contents.row
+.tweet__row
+  = render 'tweet.detail'
+  .edit--page
+    = form_for(@tweet) do |f|
+      .field
+        .field-label
+          = f.label :image
+        .field-input
+          = f.text_field :image
+      .field
+        .field-label
+          = f.label :text
+        .field-input
+          = f.text_field :text
+      .actions
+        = f.submit "Update"

@@ -1,0 +1,9 @@
+.tweet__side
+  .tweet__side--box
+    .tweet__picture
+      =image_tag(@tweet.image)
+    .tweet__text
+      .tweet__uploader--name
+        = @tweet.user.nickname
+      .tweet__main-text
+        = @tweet.text

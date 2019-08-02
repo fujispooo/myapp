@@ -1,0 +1,36 @@
+= render "header"
+.content__head
+  .content__head__left
+    .content__head__left--text
+      Recent Tweets
+    .content__head__left--line
+  .content__head__right
+    .content__head__right--text
+      Rankings
+    .content__head__right--line
+.content
+  .content__left
+    -@tweets.each do |tweet|
+      .tweet__box
+        .tweet__box__content
+          .tweet__box__content__picture
+            =link_to image_tag(tweet.image,size: 400*400),tweet_path(tweet)
+            .heart
+            =fa_icon 'heart'
+          .tweet__box__content__text
+            .posters-name
+              =tweet.user.nickname
+            .post-content
+              =tweet.text
+   
+  .content__right
+    .ranking__box
+    .ranking__box
+    .ranking__box
+    .ranking__box
+    .ranking__box
+    .ranking__box
+%footer.site-footer
+  %p.copyright @2019 TECH::EXPERT
+
+    

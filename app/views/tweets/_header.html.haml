@@ -1,0 +1,11 @@
+.site-header
+  %h1.site-logo
+    = link_to image_tag('title.png'), root_path
+  %nav.gnav
+    %ul.gnav__menu
+      %li.gnav__menu__item
+        = link_to "Log out", destroy_user_session_path, method: :delete, class: 'btn'
+        = fa_icon 'home'
+      %li.gnav__menu__item
+        = link_to "Post", new_tweet_path
+        = fa_icon 'edit'

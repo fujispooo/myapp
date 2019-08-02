@@ -1,0 +1,12 @@
+= render 'header'
+.content__box
+  .contents.row
+    .container
+      = form_for @tweet ,enctype:"multipart/form-data" do |f|
+        %h3
+          POST
+        =f.label :image
+        =f.text_field :image
+        =f.label :text
+        =f.text_field :text
+        =f.submit 'send'
