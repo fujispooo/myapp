@@ -1,30 +1,46 @@
 .edit--page{
-
+  width: 55%;
+  height: 100%;
+  padding-right:40px;
   .field{
-
     .field-label{
-
     }
-    
     .field-input{
-
+      input{
+        width:100%;
+        height:50px;
+        margin: 20px 0 50px 0;
+        border-radius: 10px;
+        border-style:solid;
+        border-color:rgb(219, 241, 180);
+      }
     }
-   
   .field{
-
     .field-label{
-
     }
-     
     .field-input{
-
+      input{
+        width:100%;
+        height:50px;
+        margin: 20px 0 50px 0;
+        border-radius: 10px;
+        border-style:solid;
+        border-color:rgb(219, 241, 180);
+      }
     }
   }
- 
   .actions{
-    
+    height:50px;
+    width: 100%;
+    input{
+      width:15%;
+      height:50px;
+      margin: 20px 0 50px 0;
+      border-radius: 10px;
+      border-style:solid;
+      border-color:rgb(219, 241, 180);
+    }
   }
-   
   }
 }
   

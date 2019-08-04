@@ -11,19 +11,20 @@
           .commented__text
             =comment.text
     .edit__list
-      -if current_user.id == @tweet.user_id
-        .edit-box
-          =link_to 'Edit',edit_tweet_path(@tweet)
-        .delete-box
-          =link_to 'Delete',tweet_path(@tweet),method: :delete
-      -else 
-        .comment--box
-          =form_for ([@tweet, @comment]) do |f|
-            .comment--box__label
-              =f.label :text
-            .comment--box__text
-              =f.text_field :text
-            .comment--box__btn
-              =f.submit "Comment", class:'form_submit'
+      .edit__list--box
+        -if current_user.id == @tweet.user_id
+          .edit-box
+            =link_to 'Edit',edit_tweet_path(@tweet)
+          .delete-box
+            =link_to 'Delete',tweet_path(@tweet),method: :delete
+        -else 
+          .comment--box
+            =form_for ([@tweet, @comment]) do |f|
+              .comment--box__label
+                =f.label :text
+              .comment--box__text
+                =f.text_field :text
+              .comment--box__btn
+                =f.submit "Comment", class:'form_submit'
 
 

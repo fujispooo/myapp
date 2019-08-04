@@ -28,10 +28,14 @@ body{
   
     .gnav__menu__item{
       margin-left: 20px;
-    }
-    .gnav__menu__item a{
-      color: #333;
-      text-decoration: none;
+      a{
+        color: #333;
+        text-decoration: none;
+      }
+      &--name{
+        font-weight: bold;
+        margin-left: 20px;
+      }
     }
   }
 }

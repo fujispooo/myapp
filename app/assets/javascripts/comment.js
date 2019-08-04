@@ -18,11 +18,19 @@ $(function(){
       processData: false,
       contentType: false
     })
-    .done(function(data){
-      var html = buildHTML(data);
-      $('.comment__list').prepend(html);
-      $('.comment--box__text input').val('');
-      $('.form_submit').prop('disabled', false);
+    .done(function(comment){
+      if (comment.text.length !== 0){
+        var html = buildHTML(comment);
+        $('.comment__list').prepend(html);
+        $('.comment--box__text input').val('');
+        $('.form_submit').prop('disabled', false);
+        $('.comment__list').animate({ scrollTop: 0});
+      } 
+      else {
+        alert('コメントを入力してください');
+        $('.form_submit').prop('disabled', false);
+      }
+
     })
   })
 });
