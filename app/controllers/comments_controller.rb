@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(text:comment_params[:text],user_id: current_user.id,tweet_id: comment_params[:tweet_id])
-    # redirect_to "/tweets/#{comment_params[:tweet_id]}"
     respond_to do |format|
       format.html { redirect_to "/tweets/#{comment_params[:tweet_id]}"}
       format.json
