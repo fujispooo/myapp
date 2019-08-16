@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
     end
   end
 
+  
   private
   def comment_params
     params.require(:comment).permit(:text).merge(tweet_id: params[:tweet_id], user_id: current_user.id)
