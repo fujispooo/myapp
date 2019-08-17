@@ -1,7 +1,7 @@
 .tweet__side
   .tweet__side--box
     .tweet__picture
-      =image_tag(@tweet.image)
+      =image_tag(@tweet.image.to_s)
     .tweet__text
       .tweet__uploader--name
         = @tweet.user.nickname
