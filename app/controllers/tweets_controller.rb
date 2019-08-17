@@ -10,7 +10,10 @@ class TweetsController < ApplicationController
 
   def create
     Tweet.create(user_id: current_user.id,text: tweet_params[:text],image: tweet_params[:image])
-    redirect_to action: 'index'
+    respond_to do |format|
+      flash[:notice] = "ツイートが完了しました"
+      format.js { render ajax_redirect_to(root_path) }
+    end
   end
 
   def destroy
@@ -22,25 +25,30 @@ class TweetsController < ApplicationController
   def edit
     @tweet = Tweet.find(params[:id])
   end
-
+  
   def show
     @tweet = Tweet.find(params[:id])
     @comments = @tweet.comments.includes(:user).order(created_at: :desc)
     @comment = Comment.new
   end
-
+  
   def update
     tweet = Tweet.find(params[:id])
     if tweet.user_id == current_user.id
-    tweet.update(tweet_params)
+      tweet.update(tweet_params)
     end
-    redirect_to action: 'index'
+    respond_to do |format|
+      flash[:notice] = "ツイートの編集が完了しました"
+      format.js { render ajax_redirect_to(root_path) }
+    end
   end
   
-  
-  private
-
+private
   def tweet_params
-    params.require(:tweet).permit(:text,:image)
+    params.permit(:text,:image)
+  end
+
+  def ajax_redirect_to(redirect_uri)
+    { js: "window.location.replace('#{redirect_uri}');" }
   end
 end

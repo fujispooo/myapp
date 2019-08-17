@@ -90,32 +90,15 @@ $(function(){
     }
   };
   function usersVal(formData){
-    name = $('#name').val();
-    email = $('#email').val();
-    twitter = $('#twitter').val();
-    facebook = $('#facebook').val();
-    content = $('#content').val();
-    want_to_advertise = $(':radio[name="want_to_advertise"]:checked').val();
-    want_to_be_advertised = $(':radio[name="want_to_be_advertised"]:checked').val();
-
+    text = $('#text').val();
     if (blob != null){
-      formData.append('icon', blob);
+      formData.append('image', blob);
     }
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('twitter', twitter);
-    formData.append('facebook', facebook);
-    formData.append('content', content);
-    if (want_to_advertise != null){
-      formData.append('want_to_advertise', want_to_advertise);
-    }
-    if (want_to_be_advertised != null){
-      formData.append('want_to_be_advertised', want_to_be_advertised);
-    }
+    formData.append('text', text);
     return formData
   }
 
-  $('#upicon').on('change', function(e){
+  $('#up_image').on('change', function(e){
     file = e.target.files[0];
     reader = new FileReader();
 

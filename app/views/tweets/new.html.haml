@@ -2,22 +2,17 @@
 .content__box
   .contents.row
     .container
-      = form_for @tweet ,enctype:"multipart/form-data" do |f|
-        =f.label :text
-        =f.text_field :text
+      = form_for @tweet ,enctype:"multipart/form-data" ,remote: true do |f|
+        =f.text_field :text,placeholder: "ツイートを入力してください",id:"text"
         = hidden_field_tag "action", params[:action]
         = hidden_field_tag "route", "tweets"
         = hidden_field_tag "idParams", @tweet.id
-        .field.image
-          %i.far.fa-check-square
-          #img_field{:onclick => "$('#upicon').click()"}
-            - if @tweet.image.present?
-              = "#{image_tag @tweet.image}"
-            - else
-              %i.fas.fa-image
-              %i.fas.fa-file-upload.add
-          =f.file_field :image, class: "icon", style: "display:none;", id: "upicon"
-        = f.submit "変更"
+        .field__image
+          #img_field{onclick: "$('#upicon').click()"}
+            - if @tweet.image.to_s.present?
+              = image_tag(@tweet.image.to_s)
+          =f.file_field :image, class: "image__box", id: "up_image"
+        = f.submit "送信",class: "submit_btn"
         .overlay{style: "display:none;"}
           .crop_modal
           .close_btn

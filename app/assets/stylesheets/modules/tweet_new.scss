@@ -23,14 +23,22 @@
         border-style:solid;
         border-color:rgb(219, 241, 180);
       }
-      textarea{
+      .field__image{
         width:700px;
-        height:200px;
-        border-radius: 10px;
-        border-style:solid;
-        border-color:rgb(219, 241, 180);
+        height:300px;
+        margin:0px auto;
+        #image_field{
+          width:180px;
+          height:180px;
+          margin:0px auto;
+        }
+        .image__box{
+          width:400px;
+          height:30px;
+          margin:0px auto;
+        }
       }
-      .btn{
+      .submit_btn{
         width:180px;
         height:60px;
         background-color:rgba(156, 246, 144, 0.945);
