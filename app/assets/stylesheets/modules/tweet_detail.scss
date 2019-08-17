@@ -65,6 +65,20 @@
           margin:5px;
         }
       }
+      .reply__list--box{
+        margin:5px 5px 5px 30px;
+        border-width:2px;
+        border-style:solid ;
+        border-radius: 13px;
+        background-color: rgb(247, 224, 243);
+        .commented__user{
+          margin:5px;
+          font-weight: bold;
+        }
+        .commented__text{
+          margin:5px;
+        }
+      }
     }
     .edit__list{
       height:150px;
