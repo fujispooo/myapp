@@ -5,11 +5,24 @@
   .comment__side-box
     .comment__list
       -@comments.each do |comment|
-        .comment__list--box
-          .commented__user
-            =comment.user.nickname
-          .commented__text
-            =comment.text
+        -if comment.parent_id == nil 
+          .comment__list--box
+            .commented__user
+              =comment.user.nickname
+            .commented__text
+              =comment.text
+          - replies = Comment.where("parent_id = #{comment.id}")
+          - unless replies.empty?
+            - replies.each do |reply|
+              .reply__list--box
+                .commented__user
+                  ="#{reply.user.nickname}"
+                .commented__text
+                  =reply.text
+          = form_for ([@tweet, @comment]) do |f| 
+            = f.hidden_field :parent_id ,value: comment.id
+            = f.text_field :text 
+            = f.submit class:'form_submit'
     .edit__list
       .edit__list--box
         -if current_user.id == @tweet.user_id

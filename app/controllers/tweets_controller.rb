@@ -37,6 +37,7 @@ class TweetsController < ApplicationController
     redirect_to action: 'index'
   end
   
+  
   private
 
   def tweet_params
