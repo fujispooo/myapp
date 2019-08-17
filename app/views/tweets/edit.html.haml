@@ -3,16 +3,19 @@
 .tweet__row
   = render 'tweet.detail'
   .edit--page
-    = form_for(@tweet) do |f|
-      .field
-        .field-label
-          = f.label :image
-        .field-input
-          = f.text_field :image
-      .field
-        .field-label
-          = f.label :text
-        .field-input
-          = f.text_field :text
-      .actions
-        = f.submit "Update"
+    = form_for @tweet ,enctype:"multipart/form-data" ,remote: true do |f|
+      =f.text_field :text,placeholder: "ツイートを入力してください",id:"text"
+      = hidden_field_tag "action", params[:action]
+      = hidden_field_tag "route", "tweets"
+      = hidden_field_tag "idParams", @tweet.id
+      .field__image
+        #img_field{onclick: "$('#upicon').click()"}
+          - if @tweet.image.to_s.present?
+            = image_tag(@tweet.image.to_s)
+        =f.file_field :image, class: "image__box", id: "up_image"
+      = f.submit "Update",class: "submit_btn"
+      .overlay{style: "display:none;"}
+        .crop_modal
+        .close_btn
+        .select_icon_btn 決定
+    

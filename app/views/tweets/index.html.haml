@@ -14,7 +14,7 @@
       .tweet__box
         .tweet__box__content
           .tweet__box__content__picture
-            =link_to image_tag(tweet.image,size: 400*400),tweet_path(tweet)
+            =link_to image_tag(tweet.image.to_s),tweet_path(tweet)
             .heart
             =fa_icon 'heart'
           .tweet__box__content__text
@@ -22,7 +22,6 @@
               =tweet.user.nickname
             .post-content
               =tweet.text
-   
   .content__right
     .ranking__box
     .ranking__box
