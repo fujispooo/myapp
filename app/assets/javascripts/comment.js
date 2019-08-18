@@ -57,6 +57,7 @@ $(function(){
         $('.reply__list').prepend(html);
         $('.reply__comment').val('');
         $('.form_submit').prop('disabled', false);
+        // $('.comment__list').animate({ scrollTop: 0});
       } 
       else {
         alert('コメントを入力してください');

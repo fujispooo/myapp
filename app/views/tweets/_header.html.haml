@@ -11,3 +11,6 @@
         = fa_icon 'edit'
       %li.gnav__menu__item--name
         = current_user.nickname
+  = form_with url: search_tweets_path, method: :get, local: true do |form| 
+    = form.text_field :keyword
+    = form.submit "search"

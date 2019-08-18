@@ -1,0 +1,26 @@
+= render 'header'
+.content__head
+.content
+  .content__left
+    -@tweets.each do |tweet|
+      .tweet__box
+        .tweet__box__content
+          .tweet__box__content__picture
+            =link_to image_tag(tweet.image.to_s),tweet_path(tweet)
+            .heart
+            =fa_icon 'heart'
+          .tweet__box__content__text
+            .posters-name
+              =tweet.user.nickname
+            .post-content
+              =tweet.text
+  .content__right
+    .ranking__box
+    .ranking__box
+    .ranking__box
+    .ranking__box
+    .ranking__box
+    .ranking__box
+%footer.site-footer
+  %p.copyright @2019 TECH::EXPERT
+  
