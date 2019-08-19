@@ -1,0 +1,4 @@
+%h1 Likes#destroy
+%p Find me in app/views/likes/destroy.html.haml
+
+%script{$("#tweet-<%= @tweet.id %> .like").html("<%= escape_javascript(render "likes/like", tweet: @tweet) %>");}

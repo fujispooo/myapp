@@ -16,7 +16,8 @@
           .tweet__box__content__picture
             =link_to image_tag(tweet.image.to_s),tweet_path(tweet)
             .heart
-            =fa_icon 'heart'
+              =fa_icon 'heart'
+              =render "likes/like", tweet: tweet
           .tweet__box__content__text
             .posters-name
               =tweet.user.nickname
@@ -31,5 +32,3 @@
     .ranking__box
 %footer.site-footer
   %p.copyright @2019 TECH::EXPERT
-
-    

@@ -100,12 +100,17 @@ body{
             background: rgb(219, 241, 180);
             border-radius: 7px 7px 0 0;
             position: relative;
-            .fa{
-              position: absolute;
-              top:180px;
-              right: 15px;
-              font-size:45px;
-              color: red;
+            .heart{
+              width: 100px;
+              height: 100px;
+              background: url(http://nelog.jp/wp-content/uploads/2016/03/heart_animation.png) no-repeat;
+              background-position: 0 0;
+              cursor: pointer;
+              &:active{
+                background-position: -2800px 0;
+                -webkit-transition: background 1s steps(28);
+                transition: background 1s steps(28);
+              }
             }
             img{
               height:200px;

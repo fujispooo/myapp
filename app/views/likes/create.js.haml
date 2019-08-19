@@ -1,0 +1,4 @@
+%h1 Likes#create
+%p Find me in app/views/likes/create.html.haml
+
+%script{$("#tweet-<%= tweet.id %> .like").html("<%= escape_javascript(render "likes/like", tweet: tweet) %>");}
