@@ -34,7 +34,7 @@ $(function(){
     img_field.innerHTML = '';
     img_field.appendChild(croppedImage);
   };
-
+  
   var blob;
   function blobing(){
     if (croppedCanvas && croppedCanvas.toBlob){
@@ -50,19 +50,19 @@ $(function(){
       sending();
     };
   };
-
-
+  
+  
   function sending(){
     var formData = new FormData();
     const route = $('#route').val();
     const id = $('#idParams').val();
     const action = $('#action').val();
-
+    
     $.ajaxPrefilter(function(options, originalOptions, jqXHR){
       var token;
       if (!options.crossDomain){
         token = $('meta[name="csrf-token"]').attr('content');
-
+        
         if (token){
           return jqXHR.setRequestHeader('X-CSRF-Token', token);
         };
@@ -97,11 +97,11 @@ $(function(){
     formData.append('text', text);
     return formData
   }
-
+  
   $('#up_image').on('change', function(e){
     file = e.target.files[0];
     reader = new FileReader();
-
+    
     if(file.type.indexOf('image') < 0){
       return false;
     };
@@ -118,20 +118,20 @@ $(function(){
     });
     reader.readAsDataURL(file);
   });
-
+  
   $('.select_icon_btn').on('click', function(){
     iconCropping();
     $('.overlay').fadeOut();
     $('#crop_img').remove();
     $('.cropper-container').remove();
   });
-
+  
   $('.close_btn').on('click', function(){
     $('.overlay').fadeOut();
     $('#crop_img').remove();
     $('.cropper-container').remove();
   });
-
+  
   $('.submit_btn').on('click', function(){
     blobing();
   });

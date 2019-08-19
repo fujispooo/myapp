@@ -2,11 +2,10 @@
 .content__box
   .contents.row
     .container
-      = form_for @tweet ,enctype:"multipart/form-data" ,remote: true do |f|
+      = form_for @tweet ,remote: true do |f|
         =f.text_field :text,placeholder: "ツイートを入力してください",id:"text"
         = hidden_field_tag "action", params[:action]
         = hidden_field_tag "route", "tweets"
-        = hidden_field_tag "idParams", @tweet.id
         .field__image
           #img_field{onclick: "$('#upicon').click()"}
             - if @tweet.image.to_s.present?
