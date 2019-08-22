@@ -28,7 +28,6 @@ group :test do
   gem 'chromedriver-helper'
 end
 
-
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pry-rails'
 gem 'compass-rails', '3.1.0'
@@ -38,4 +37,8 @@ gem "font-awesome-rails"
 gem 'devise'
 gem 'jquery-rails'
 gem 'carrierwave'
-  
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2','~>0.7.0'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'erb2haml'
