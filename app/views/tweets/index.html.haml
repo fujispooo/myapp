@@ -16,11 +16,12 @@
           .tweet__box__content__picture
             =link_to image_tag(tweet.image.to_s),tweet_path(tweet)
             .heart
-              =fa_icon 'heart'
-              =render "likes/like", tweet: tweet
           .tweet__box__content__text
             .posters-name
-              =tweet.user.nickname
+              .posters-name__left
+                =tweet.user.nickname
+              .posters-name__right
+                =render "likes/like", tweet: tweet
             .post-content
               =tweet.text
   .content__right

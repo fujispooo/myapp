@@ -101,8 +101,11 @@ body{
             border-radius: 7px 7px 0 0;
             position: relative;
             .heart{
-              width: 100px;
-              height: 100px;
+              position:absolute;
+              right: 1%;
+              bottom:-15%;
+              width: 80px;
+              height: 80px;
               background: url(http://nelog.jp/wp-content/uploads/2016/03/heart_animation.png) no-repeat;
               background-position: 0 0;
               cursor: pointer;
@@ -132,6 +135,13 @@ body{
               border-width:0 0 1px;
               border-color:black;
               border-style:dotted ;
+              display: flex;
+              &__left{
+                width:85%;
+              }
+              &__right{
+                width:15%;
+              }
             }
             .post-content{
           }
