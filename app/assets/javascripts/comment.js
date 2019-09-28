@@ -3,7 +3,11 @@ $(function(){
     var html =  `<div class='comment__list--box'>
                   <div class='commented__user'>${comment.user_name}</div>
                   <div class='commented__text'>${comment.text}</div>
-                </div>`
+                </div>
+                <form class="new_comment" id="new__reply" action="/tweets/${comment.tweet_id}/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="q6Hj/dCeittBppzX+ToTFRMqG1wa/4QejJ7j4fjS+WlA3CHPCtBxJ5QNChfWgxUKE5eQCLwX371WewrI76tEfw=="><input value="${comment.id}" type="hidden" name="comment[parent_id]" id="comment_parent_id">
+                  <input class="reply__comment" type="text" name="comment[text]" id="comment_text">
+                  <input type="submit" name="commit" value="Create Comment" class="form_submit" data-disable-with="Create Comment">
+                </form>`
     return html;
   }
   function reply_buildHTML(reply_comment){
