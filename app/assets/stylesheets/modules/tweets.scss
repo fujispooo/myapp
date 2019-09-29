@@ -4,51 +4,57 @@
 *{
   box-sizing: border-box;
 }
-
+html{
+  height: 100%;
+}
 body{
   background:white;
+  height: 100%;
 }
 .site-header{
   background: rgba(100, 252, 80, 0.7);
   display: flex;
   padding: 20px 100px;
-  position: fixed;
   justify-content: space-between;
   width: 100%;
-  height: 80px;
-  z-index: 1;
-  img{
-    height: 70px;
-    width: auto;
-    padding-bottom: 20px;
+  height: 10%;
+  z-index: 100;
+  &-logo{
+    height: 100%;
+    // img{
+    //   height: 80%;
+    //   width: auto;
+    //   padding-bottom: 20px;
+    // }
   }
-  .gnav__menu{
-    display: flex;
-    padding-top: 10px;
-  
-    .gnav__menu__item{
-      margin-left: 20px;
-      a{
-        color: #333;
-        text-decoration: none;
-      }
-      &--name{
-        font-weight: bold;
+  .gnav{
+    height: 100%;
+    &__menu{
+      display: flex;
+      padding-top: 10px;
+      &__item{
         margin-left: 20px;
+        a{
+          color: #333;
+          text-decoration: none;
+        }
+        &--name{
+          font-weight: bold;
+          margin-left: 20px;
+        }
       }
     }
   }
 }
 
 .content__head{
-  height: 70 px;
+  height: 6%;
   width: 100%;
   display: flex;
   text-align: center;
-  padding-top: 90px;
   .content__head__left{
     width: 64%;
-    padding-bottom:15px;
+    // padding-bottom:15px;
     .content__head__left--text{
       font-size: 20px;
     }
@@ -61,7 +67,7 @@ body{
   }
   .content__head__right{
     width: 36%;
-    padding-bottom:15px;
+    // padding-bottom:15px;
     .content__head__right--text{
       font-size: 20px;
     }
@@ -78,12 +84,12 @@ body{
 .content{
   line-height: 1.6;
   padding: 0 20px;
-  padding-bottom: 50px;
   width: 100%;
   display: flex;
+  height: 82%;
   &__left{
     width:66%;
-    height: 1500px;
+    height: 100%;
     overflow: scroll;
     .tweet__box{
       width: 33%;
@@ -151,7 +157,7 @@ body{
   }
   &__right{
     width:34%;
-    height:1500px;
+    height:100%;
     overflow: scroll;
     .ranking__box{
       margin-bottom:20px;
@@ -164,19 +170,7 @@ body{
 .content p{
   margin-bottom: 40px;
 }
-.site-footer{
-  background: #333;
-  padding: 40px 0;
-  display: fixed;
-  z-index: 1;
-  bottom: 0;
-  .copyright{
-    color: #fff;
-    font-size: 12px;
-    text-align: center;
-    
-  }
-}
+
 .tweet__box__content:hover{
   box-shadow:1px 1px 10px grey;
   border-radius: 13px;
