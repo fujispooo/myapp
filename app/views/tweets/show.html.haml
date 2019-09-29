@@ -12,7 +12,7 @@
             .commented__text
               =comment.text
           - replies = Comment.where("parent_id = #{comment.id}")
-          - unless replies.empty?
+          - if replies.present?
             .reply__list
               - replies.each do |reply|
                 .reply__list--box
@@ -20,10 +20,11 @@
                     ="#{reply.user.nickname}"
                   .commented__text
                     =reply.text
-          = form_for([@tweet, @comment], html:{id:"new__reply"}) do |f| 
-            = f.hidden_field :parent_id ,value: comment.id
-            = f.text_field :text,class: "reply__comment"
-            = f.submit class:'form_submit'
+          #result-box
+            = form_for([@tweet, @comment], html:{id:"new__reply"}) do |f| 
+              = f.hidden_field :parent_id ,value: comment.id
+              = f.text_field :text,class: "reply__comment"
+              = f.submit class:'form_submit'
     .edit__list
       .edit__list--box
         -if current_user.id == @tweet.user_id
