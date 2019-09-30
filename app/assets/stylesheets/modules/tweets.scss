@@ -21,11 +21,11 @@ body{
   z-index: 100;
   &-logo{
     height: 100%;
-    // img{
-    //   height: 80%;
-    //   width: auto;
-    //   padding-bottom: 20px;
-    // }
+    img{
+      height: 80%;
+      width: auto;
+      padding-bottom: 20px;
+    }
   }
   .gnav{
     height: 100%;
