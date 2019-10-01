@@ -14,38 +14,37 @@ body{
 .site-header{
   background: rgba(100, 252, 80, 0.7);
   display: flex;
-  padding: 0 100px;
   justify-content: space-between;
   width: 100%;
   height: 10%;
   z-index: 100;
+  .site-header-blank-box{
+    width:33%;
+  }
   &-logo{
     height: 100%;
-    width:20%;
+    width:33%;
     display: inline-block;
     background-image: url(title.PNG);
     background-size: contain;
     background-repeat:  no-repeat; 
-    text:none;
+    background-position: center;
   }
-  .gnav{
+  .search-form{
     height: 100%;
-    width:80%;
+    width: 33%;
+    padding: 2% 4%;
     display: flex;
-    &__menu{
-      width:50%;
-      display: flex;
-      line-height: 100%;
-      &__item{
-        margin-left: 20px;
-        a{
-          color: #333;
-          text-decoration: none;
-        }
-      }
+    .form-input-box{
+      display: inline-block;
+      width: 85%;
+      height: 20px;
     }
-    .search-form{
-      width:50%;
+    .form-submit-btn{
+      display: block;
+      width: 15%;
+      height: 20px;
+      cursor: pointer;
     }
   }
 }
