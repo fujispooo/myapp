@@ -20,14 +20,15 @@ body{
   z-index: 100;
   .site-header-blank-box{
     width:33%;
+    height: 100%;
   }
   &-logo{
     height: 100%;
     width:33%;
     display: inline-block;
-    background-image: url(title.PNG);
+    background-image: url('title.png');
     background-size: contain;
-    background-repeat:  no-repeat; 
+    background-repeat: no-repeat;
     background-position: center;
   }
   .search-form{
