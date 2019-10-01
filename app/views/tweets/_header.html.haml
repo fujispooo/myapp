@@ -1,16 +1,7 @@
 .site-header
-  %h1.site-logo
-    = link_to image_tag('title.png'), root_path
-  %nav.gnav
-    %ul.gnav__menu
-      %li.gnav__menu__item
-        = link_to "Log out", destroy_user_session_path, method: :delete, class: 'btn'
-        = fa_icon 'home'
-      %li.gnav__menu__item
-        = link_to "Post", new_tweet_path
-        = fa_icon 'edit'
-      %li.gnav__menu__item--name
-        = current_user.nickname
-  = form_with url: search_tweets_path, method: :get, local: true do |form| 
-    = form.text_field :keyword
-    = form.submit "search"
+  .site-header-blank-box
+  = link_to '',root_path,class:'site-header-logo'
+  = form_with url: search_tweets_path, method: :get,class:'search-form' ,local: true do |form| 
+    = form.text_field :keyword,placeholder: "検索ワードを入力", type: "search",class:'form-input-box'
+    %button{type:'submit',class:'form-submit-btn'}
+      %i{class:'fa fa-search'}
