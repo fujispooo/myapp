@@ -11,4 +11,5 @@
 ![5263fe7e673fced2ca6debe018a8a886](https://user-images.githubusercontent.com/53245774/65834354-03423600-e315-11e9-9eea-86ef305e353b.gif)
 
 #### 非同期通信メッセージ送信機能
+![1781ddbad34c71aa0b46d35e972223d0](https://user-images.githubusercontent.com/53245774/65928396-b8214380-e438-11e9-810a-5bc808248939.gif)
 
